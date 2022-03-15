@@ -6,10 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/main.css">
   <title>Document</title>
+  <style>
+    body {
+      background-color: lightyellow;
+    }
+
+    .bgcolor--blue {
+      background-color: lightblue;
+    }
+  </style>
   <script src="main.js" defer></script>
 </head>
 <body>
-  <h1></h1>
-  
+  <button class="btn_bg">배경색상변경</button>
+  <script> 
+    const btnBG = document.querySelector('.btn_bg');
+    btnBG.addEventListener('click', function () {
+      document.body.classList.toggle('bgcolor--blue');
+    })
+  </script>
 </body>
 </html>
