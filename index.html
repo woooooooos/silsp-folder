@@ -9,20 +9,76 @@
   <style>
     body {
       background-color: lightyellow;
+      width: 100vh;
+      height: 100vh;
+      transition: 1s;
     }
 
     .bgcolor--blue {
+      
+      transition: 1s;
       background-color: lightblue;
     }
+    .bgcolor--gray {
+      
+      transition: 1s;
+      background-color: rgb(137, 47, 255);
+    }
+    .bg--img { 
+      background-image: url(/images/bg_img.png);
+      background-repeat: no-repeat;
+      transition: 1s;
+      width: 100vh;
+      height: 100vh;
+    }
+    .btn {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      top: 200px;
+      margin-left: 600px;
+      width: 600px;
+      transition: 1s;
+    }
+    button {
+      border-radius: 25px;
+      width: 120px;
+      height: 60px;
+      font-size: 15px;
+    }
+    
   </style>
   <script src="main.js" defer></script>
 </head>
 <body>
-  <button class="btn_bg">배경색상변경</button>
+  <div class="btn">
+    <button class="btn_bg">Toggle</button>
+    <button class="btn_re">Reset</button>
+    <button class="btn_gr">Purple</button>
+    <button class="btn_pic">Image</button>
+  </div>
+
   <script> 
     const btnBG = document.querySelector('.btn_bg');
     btnBG.addEventListener('click', function () {
       document.body.classList.toggle('bgcolor--blue');
+      document.body.classList.remove('bgcolor--gray', 'bg--img');
+    })
+
+    const btnRE = document.querySelector('.btn_re');
+    btnRE.addEventListener('click', function() {
+      document.body.classList.remove('bgcolor--blue', 'bgcolor--gray', 'bg--img');
+    })
+
+    const btnGR = document.querySelector('.btn_gr');
+    btnGR.addEventListener('click', function () {
+      document.body.classList.add('bgcolor--gray');
+      document.body.classList.remove('bgcolor--blue', 'bg--img');
+    })
+
+    const btnPIC = document.querySelector('.btn_pic');
+    btnPIC.addEventListener('click', function () {
+      document.body.classList.add('bg--img')
     })
   </script>
 </body>
